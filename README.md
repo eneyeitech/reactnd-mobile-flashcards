@@ -13,7 +13,7 @@ Clone the repository, change directories, and use npm or yarn to install the dep
 
 ```bash
 $ git clone https://github.com/eneyeitech/reactnd-mobile-flashcards.git
-$ cd mobile-flashcardsreactnd-mobile-flashcards
+$ cd reactnd-mobile-flashcards
 $ yarn install
 ```
 
