@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Icon, Input, Text } from "react-native-elements";
 
 import { saveDeckInStorage } from "../utils/api";
-import { createDeckObject } from "../utils/helper";
+import { createDeckObject } from "../utils/helpers";
 import { commonStyles } from "../utils/styles";
 import { addDeck } from "../actions";
 import SubmitButton from "./SubmitButton";

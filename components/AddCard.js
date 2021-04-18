@@ -10,7 +10,7 @@ import { Button, Icon, Input, Text } from "react-native-elements";
 import { connect } from "react-redux";
 
 import { saveCardInStorage } from "../utils/api";
-import { createCardObject } from "../utils/helper";
+import { createCardObject } from "../utils/helpers";
 import { addCard } from "../actions";
 import { commonStyles } from "../utils/styles";
 import SubmitButton from "./SubmitButton";
@@ -27,7 +27,8 @@ class AddCard extends Component {
   };
 
   handleAddCard = async () => {
-    const { deckId } = this.props.navigation.state.params;
+    //const { deckId } = this.props.navigation.state.params;
+    const deckId = 1;
     const { question, answer } = this.state;
 
     if (!question || !answer) {
@@ -50,8 +51,8 @@ class AddCard extends Component {
   };
 
   render() {
-    const { deckId } = this.props.navigation.state.params;
-
+    //const { deckId } = this.props.navigation.state.params;
+    const deckId = 1;
     return (
       <ScrollView style={commonStyles.genericTextContainer}>
         <KeyboardAvoidingView behavior="padding">

@@ -6,17 +6,17 @@ import { Text } from "react-native-elements";
 import {
   fetchDecksFromStorage,
   removeAllDecksFromStorage,
-  saveAllDecksInStorage
+  saveAllDecksInStorage,
+  getData
 } from "../utils/api";
 import { loadDecks } from "../actions";
-import { getDummyData } from "../utils/helper";
 import DeckPartTile from "./DeckPartTile";
 
 class Decks extends Component {
   state = { ready: false };
 
   async componentDidMount() {
-    // await removeAllDecksFromStorage();
+     //await removeAllDecksFromStorage();
 
     const { loadDecks } = this.props;
 
@@ -24,7 +24,7 @@ class Decks extends Component {
     if (decks === null) {
       // first time running the app, set some dummy data
       // then fetch again
-      await saveAllDecksInStorage(getDummyData());
+      await saveAllDecksInStorage(getData());
       decks = await fetchDecksFromStorage();
     }
     loadDecks(decks);
@@ -34,8 +34,8 @@ class Decks extends Component {
   }
 
   handleOnPress = deckId => {
-    const { navigate } = this.props.navigation;
-    navigate("Deck", { deckId });
+    const { navigate, push } = this.props.navigation;
+    push("Deck", { deckId });
   };
 
   render() {

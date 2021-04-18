@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, Text } from "react-native-elements";
-import { createRgbaFromAnyText } from "../utils/helper";
+import { createRgbaFromAnyText } from "../utils/helpers";
 
 class DeckPartTile extends Component {
   render() {

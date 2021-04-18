@@ -11,20 +11,20 @@ import DeckPartTile from "./DeckPartTile";
 class Deck extends Component {
   handleAddCard = () => {
     const { navigate } = this.props.navigation;
-    const { deckId } = this.props.navigation.state.params;
+    const { deckId } = this.props;
     navigate("AddCard", { deckId: deckId });
   };
 
   handleStartQuiz = () => {
     const { navigate } = this.props.navigation;
-    const { deckId } = this.props.navigation.state.params;
+    const { deckId } = this.props;
     navigate("Quiz", { deckId: deckId });
   };
 
   handleDeleteDeck = () => {
     // delete deck, then go back
     // const { deckId } = this.props.navigation.state.params;
-    const { deck, navigation } = this.props;
+    const { deckId, deck, navigation } = this.props;
 
     Alert.alert(
       "Delete Deck",
@@ -112,9 +112,11 @@ class Deck extends Component {
 }
 
 const mapStateToProps = (decks, ownProps) => {
-  const { deckId } = ownProps.navigation.state.params;
+  //const { deckId } = ownProps.navigation.state.params;
+  const { deckId } = ownProps.route.params;
+  console.log('deck',deckId);
   const deck = decks[deckId];
-  return { deck };
+  return { deckId, deck };
 };
 
 export default connect(

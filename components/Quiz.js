@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ScrollView, View } from "react-native";
 import { connect } from "react-redux";
-import { clearLocalNotification, setLocalNotification } from "../utils/helper";
+import { clearLocalNotification, setLocalNotification } from "../utils/helpers";
 import { Button, Card, Icon, Text } from "react-native-elements";
 
 import { commonStyles } from "../utils/styles";
@@ -197,9 +197,10 @@ class Quiz extends Component {
 }
 
 const mapStateToProps = (decks, ownProps) => {
-  const { deckId } = ownProps.navigation.state.params;
+  //const { deckId } = ownProps.navigation.state.params;
+  const { deckId } = ownProps.route.params;
   const deck = decks[deckId];
-  return { deck };
+  return { deckId, deck };
 };
 
 export default connect(mapStateToProps)(Quiz);

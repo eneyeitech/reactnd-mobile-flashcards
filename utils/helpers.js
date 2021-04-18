@@ -1,5 +1,7 @@
 import { AsyncStorage } from "react-native";
-import { Notifications, Permissions } from "expo";
+
+import * as Permissions from 'expo-permissions';
+import * as Notifications from 'expo-notifications'
 
 const NOTIFICATION_STUDY_REMINDER_KEY = "Flashcards:NotificationsStudyReminder";
 
@@ -43,60 +45,6 @@ export function createDeckObject(deckTitle) {
 
 export function createCardObject(question, answer) {
   return { question, answer };
-}
-
-export function getDummyData() {
-  return {
-    React: {
-      title: "React",
-      questions: [
-        {
-          question: "What is React?",
-          answer: "A library for managing user interfaces"
-        },
-        {
-          question: "Where do you make Ajax requests in React?",
-          answer: "The componentDidMount lifecycle event"
-        },
-        {
-          question: "What is JSX?",
-          answer:
-            "Stands for JavaScript XML. It allows combining JavaScript with HTML. Results in easier implementation and clean code."
-        }
-      ]
-    },
-    JavaScript: {
-      title: "JavaScript",
-      questions: [
-        {
-          question: "What is a closure?",
-          answer:
-            "The combination of a function and the lexical environment within which that function was declared."
-        }
-      ]
-    },
-    "HTML and CSS": {
-      title: "HTML and CSS",
-      questions: [
-        {
-          question: "What does HTML stand for?",
-          answer: "Hyper Text Markup Language"
-        },
-        {
-          question: "Who is making the Web standards?",
-          answer: "The World Wide Web Consortium"
-        },
-        {
-          question: "What's the tag to create a numbered list?",
-          answer: "<ol>"
-        },
-        {
-          question: "What does CSS stand for?",
-          answer: "Cascading Style Sheets"
-        }
-      ]
-    }
-  };
 }
 
 function createNotification() {
