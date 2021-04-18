@@ -1,7 +1,7 @@
 import { AsyncStorage } from "react-native";
 
-import * as Permissions from 'expo-permissions';
-import * as Notifications from 'expo-notifications'
+import Permissions from 'expo-permissions';
+import Notifications from 'expo-notifications'
 
 const NOTIFICATION_STUDY_REMINDER_KEY = "Flashcards:NotificationsStudyReminder";
 

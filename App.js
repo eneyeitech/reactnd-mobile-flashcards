@@ -113,18 +113,9 @@ export default class App extends React.Component {
               }}>
               <Stack.Screen name="Home" component={Home} options={{ title: 'Home', headerShown: false }} />
               <Stack.Screen name="Deck" component={Deck}
-                options={{
-                  headerLeft: (
-                    <HeaderBackButton
-                      onPress={({navigation}) => {
-                        navigation.navigate("Decks")
-                      }}
-                      tintColor="white"
-                    />
-                  ),
-                }}
+                
               />
-              <Stack.Screen name="Add Card" component={AddCard} />
+              <Stack.Screen name="AddCard" component={AddCard} options={{ title: 'Home'}}/>
               <Stack.Screen name="Quiz" component={Quiz} />
             </Stack.Navigator>
 

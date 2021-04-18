@@ -42,10 +42,10 @@ class AddDeck extends Component {
     }
 
     // add deck, reset title, then navigate to the freshly created deck
-    const { addDeck } = this.props;
+    
     const deck = createDeckObject(deckTitle);
     await saveDeckInStorage(deck);
-    addDeck(deck);
+    await this.props.dispatch(addDeck(deck));
     this.setState({ deckTitle: "" });
     navigate("Deck", { deckId: deckTitle });
   };
@@ -85,6 +85,5 @@ const mapStateToProps = decks => {
 };
 
 export default connect(
-  mapStateToProps,
-  { addDeck }
+  mapStateToProps
 )(AddDeck);

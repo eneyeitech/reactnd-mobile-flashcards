@@ -197,7 +197,7 @@ class Quiz extends Component {
 }
 
 const mapStateToProps = (decks, ownProps) => {
-  //const { deckId } = ownProps.navigation.state.params;
+  
   const { deckId } = ownProps.route.params;
   const deck = decks[deckId];
   return { deckId, deck };

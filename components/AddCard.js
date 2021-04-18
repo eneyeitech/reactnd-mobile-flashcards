@@ -27,8 +27,8 @@ class AddCard extends Component {
   };
 
   handleAddCard = async () => {
-    //const { deckId } = this.props.navigation.state.params;
-    const deckId = 1;
+    const { deckId } = this.props;
+    
     const { question, answer } = this.state;
 
     if (!question || !answer) {
@@ -42,17 +42,16 @@ class AddCard extends Component {
     }
 
     // add card, then navigate back to deck
-    const { addCard } = this.props;
+    
     const { goBack } = this.props.navigation;
     const card = createCardObject(question, answer);
     await saveCardInStorage(card, deckId);
-    addCard(card, deckId);
+    await this.props.dispatch(addCard(card, deckId));
     goBack();
   };
 
   render() {
-    //const { deckId } = this.props.navigation.state.params;
-    const deckId = 1;
+    const { deckId } = this.props;
     return (
       <ScrollView style={commonStyles.genericTextContainer}>
         <KeyboardAvoidingView behavior="padding">
@@ -100,7 +99,11 @@ class AddCard extends Component {
   }
 }
 
-export default connect(
-  null,
-  { addCard }
-)(AddCard);
+const mapStateToProps = (decks, ownProps) => {
+  
+  const { deckId } = ownProps.route.params;
+  console.log('Add Card',deckId);
+  return { deckId };
+};
+
+export default connect(mapStateToProps)(AddCard);

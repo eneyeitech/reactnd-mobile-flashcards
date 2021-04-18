@@ -34,9 +34,9 @@ class Deck extends Component {
         {
           text: "OK",
           onPress: async () => {
-            const { deleteDeck } = this.props;
+            //const { deleteDeck } = this.props;
             await removeDeckFromStorage(deck.title);
-            deleteDeck(deck.title);
+            await this.props.dispatch(deleteDeck(deck.title));
             navigation.navigate("Decks");
           }
         }
@@ -112,7 +112,7 @@ class Deck extends Component {
 }
 
 const mapStateToProps = (decks, ownProps) => {
-  //const { deckId } = ownProps.navigation.state.params;
+  
   const { deckId } = ownProps.route.params;
   console.log('deck',deckId);
   const deck = decks[deckId];
@@ -120,6 +120,5 @@ const mapStateToProps = (decks, ownProps) => {
 };
 
 export default connect(
-  mapStateToProps,
-  { deleteDeck }
+  mapStateToProps
 )(Deck);
