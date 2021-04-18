@@ -1,20 +1,41 @@
-# Tab navigation example
+# Mobile Flashcards
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+Mobile Flashcards is a React Native app for iOS and Android that allows users to create decks, add cards and quiz themselves.
 
-## 🚀 How to use
+It uses React Native, Expo, Redux, & React Navigation.
 
-- Install with `yarn` or `npm install`.
-- Run `expo start` to try it out.
+This app is the third of three projects required for Udacity's React Nanodegree program
 
-## 📝 Notes
 
-- This is a very basic example from the [react navigation](https://reactnavigation.org/) docs.
-- [Tab navigation documentation](https://reactnavigation.org/docs/tab-based-navigation).
+## Installation
+
+Clone the repository, change directories, and use npm or yarn to install the dependencies.
+
+```bash
+$ git clone https://github.com/eneyeitech/reactnd-mobile-flashcards.git
+$ cd mobile-flashcardsreactnd-mobile-flashcards
+$ yarn install
+```
+
+## Usage
+
+The project can be run with npm or yarn
+
+- `yarn start`
+- `yarn android`
+- `yarn ios`
+
+This will open Expo Developer Tools in the browser.  You can then do one of the following.
+
+- Use your device to test:
+
+    Scan the QR Code using the Expo Client app ([Expo Client for Android & iOS](https://expo.io/tools#client))  from an Android or iOS device.
+- Use an Android Emulator or iOS Simulator to run the app:
+    - [iOS Simulator Setup](https://docs.expo.io/workflow/ios-simulator/)
+    - [Android Emulator Setup](https://docs.expo.io/workflow/android-studio-emulator/)
+
+## Testing
+
+This project has been tested on the following platforms:
+
+- Android 8.1+ using Expo Go 
